@@ -1,0 +1,9 @@
+# dsh-sticky-notes-wall bundle patch.
+# The Host half owns the durable note store, attachment files and the
+# `/sticky-notes/api` routes. The Client half adds the sidebar entry, the
+# wall panel, due reminders and keyboard shortcuts.
+- insert:
+    - id: sticky-notes
+      name: dsh-sticky-notes-wall
+      config:
+        root: !!js dshHomePath('sticky-notes')

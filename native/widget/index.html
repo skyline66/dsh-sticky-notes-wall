@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DSH Sticky Notes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-scheme="auto">
+    <div id="root" class="panel">
+      <header class="bar" id="bar">
+        <span class="bar-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="14" height="14">
+            <path d="M6 3h9l5 5v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" fill="currentColor" opacity="0.9" />
+            <path d="M15 3.6V8h4.4" fill="none" stroke="#fff" stroke-width="1.4" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <span class="bar-title" id="title">置顶便签</span>
+        <span class="bar-count" id="count">0</span>
+        <span class="bar-spacer"></span>
+        <button class="icon-btn" id="btn-host" data-no-drag title="打开便签墙">↗</button>
+        <button class="icon-btn" id="btn-reload" data-no-drag title="刷新">⟳</button>
+        <button class="icon-btn" id="btn-hide" data-no-drag title="隐藏到托盘">—</button>
+      </header>
+      <main class="list" id="list"></main>
+      <footer class="foot" id="foot">拖动标题移动 · 双击标题折叠</footer>
+      <div class="grip" id="grip" title="拖动调整大小"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

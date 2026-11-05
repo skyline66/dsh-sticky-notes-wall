@@ -1,0 +1,67 @@
+{
+  "name": "dsh-sticky-notes-wall",
+  "version": "1.2.1",
+  "description": "Sticky-note wall for DSH Web: sidebar entry, image and text paste, due reminders, done state, shortcuts, a pin-on-top floating window, appearance skins, a native always-on-top Windows desktop window, and login start.",
+  "type": "module",
+  "license": "MIT",
+  "author": "skyline66",
+  "homepage": "https://github.com/skyline66/dsh-sticky-notes-wall#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyline66/dsh-sticky-notes-wall.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skyline66/dsh-sticky-notes-wall/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "sticky-notes",
+    "notes",
+    "todo",
+    "desktop-widget"
+  ],
+  "icon": "./icon.svg",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/css-check.mjs && node test/host.test.mjs && node test/smoke.mjs && node test/encoding-check.mjs",
+    "test:desktop": "node test/desktop.test.mjs",
+    "preview:desktop": "node test/preview-desktop.mjs"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "assets/icon-180.png",
+    "native/StickyWidget.cs",
+    "native/widget/*",
+    "native/sdk/*",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer"
+      ]
+    }
+  }
+}
